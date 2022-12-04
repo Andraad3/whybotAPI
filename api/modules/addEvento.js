@@ -5,7 +5,7 @@ class AddEvento {
         console.log('Requisição: ', req);
         try {
             const { data, error } = await supabase.from('userEventos').insert([
-              { some_column: 'someValue', other_column: 'otherValue' },
+              { idEvento: req.body.idEvento, idUser: req.body.idUser },
             ])
 
             return res.status(200).json({ data, error })
